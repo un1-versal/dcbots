@@ -1,168 +1,133 @@
 <!DOCTYPE html>
 <html lang="ru">
-	<head>
-		<meta charset="UTF-8">
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-				<title>Страница не найдена | DC Bots</title>
-				<meta name="description" content="DC Bots — автоматизация для Avito, игр и макросов.">
-					<meta name="robots" content="noindex, follow">
-						<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%234a5a6a'/%3E%3Ctext x='50' y='67' text-anchor='middle' fill='white' font-size='50' font-weight='500'%3EDC%3C/text%3E%3C/svg%3E">
-							<link rel="preconnect" href="https://fonts.googleapis.com">
-								<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-									<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-										<style>
-											* { margin: 0; padding: 0; box-sizing: border-box; }
-											:root {
-											--bg: #fafbfc; --card: #fff; --border: #e9ebed;
-											--text: #1a1e24; --text-secondary: #5a6473; --text-muted: #8a94a3;
-											--accent: #4a5a6a; --accent-hover: #2c3a4a; --cta: #3d4e5e;
-											}
-											body {
-											font-family: 'Inter', sans-serif;
-											background: var(--bg);
-											color: var(--text);
-											line-height: 1.5;
-											min-height: 100vh;
-											display: flex;
-											align-items: center;
-											justify-content: center;
-											padding: 24px;
-											}
-											.error-container {
-											max-width: 600px;
-											width: 100%;
-											background: var(--card);
-											border: 1px solid var(--border);
-											border-radius: 24px;
-											padding: 56px 40px;
-											text-align: center;
-											box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-											}
-											.error-code {
-											font-size: 120px;
-											font-weight: 300;
-											color: var(--accent);
-											line-height: 1;
-											margin-bottom: 16px;
-											letter-spacing: -4px;
-											}
-											h1 {
-											font-size: 28px;
-											font-weight: 500;
-											margin-bottom: 12px;
-											color: var(--text);
-											}
-											p {
-											color: var(--text-secondary);
-											font-size: 16px;
-											margin-bottom: 32px;
-											}
-											.btn {
-											display: inline-flex;
-											align-items: center;
-											justify-content: center;
-											padding: 14px 36px;
-											background: var(--cta);
-											color: white;
-											border: none;
-											border-radius: 40px;
-											font-size: 15px;
-											font-weight: 500;
-											text-decoration: none;
-											transition: all 0.2s;
-											cursor: pointer;
-											box-shadow: 0 4px 14px rgba(61,78,94,0.15);
-											}
-											.btn:hover {
-											background: var(--accent-hover);
-											transform: translateY(-1px);
-											box-shadow: 0 6px 18px rgba(61,78,94,0.2);
-											}
-											.links {
-											margin-top: 32px;
-											display: flex;
-											gap: 24px;
-											justify-content: center;
-											flex-wrap: wrap;
-											}
-											.links a {
-											color: var(--accent);
-											text-decoration: none;
-											font-size: 14px;
-											transition: color 0.2s;
-											}
-											.links a:hover {
-											color: var(--accent-hover);
-											text-decoration: underline;
-											}
-											.footer {
-											margin-top: 40px;
-											color: var(--text-muted);
-											font-size: 13px;
-											}
-											@media (max-width: 768px) {
-											.error-container { padding: 40px 24px; }
-											.error-code { font-size: 90px; }
-											h1 { font-size: 24px; }
-											}
-										</style>
-									</head>
-	<body>
-		<div class="error-container">
-			<div class="error-code">404</div>
-			<h1>Страница не найдена</h1>
-			<p>Извините, запрошенная страница не существует или была перемещена.</p>
-			<a href="index.html" class="btn">Вернуться на главную</a>
-			<div class="links">
-				<a href="index.html">Главная</a>
-				<a href="news.html">Новости</a>
-				<a href="support.html">Поддержка</a>
-				<a href="partners.html">Партнёрам</a>
-				<a href="#" onclick="openLicenseModal(); return false;">Лицензия</a>
-			</div>
-			<div class="footer">
-				© 2026 DC Bots. Все права защищены.
-			</div>
-		</div>
-
-		<!-- Модальное окно лицензии -->
-		<div id="licenseModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); backdrop-filter: blur(4px); align-items: center; justify-content: center;">
-			<div style="background: #fff; width: 90%; max-width: 700px; max-height: 80vh; overflow-y: auto; border-radius: 20px; border: 1px solid #e9ebed; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
-				<div style="padding: 22px 26px; border-bottom: 1px solid #e9ebed; display: flex; justify-content: space-between; align-items: center;">
-					<h2 style="font-size: 22px; font-weight: 500; margin: 0; color: #1a1e24;">Лицензионное соглашение</h2>
-					<span onclick="closeLicenseModal()" style="color: #8a94a3; font-size: 28px; cursor: pointer; line-height: 1;">&times;</span>
-				</div>
-				<div style="padding: 24px; color: #5a6473; font-size: 14px; line-height: 1.6;">
-					<p style="margin-bottom: 16px;">© 2026 DC Bots. Все права защищены.</p>
-					<p style="margin-bottom: 16px;">Настоящее лицензионное соглашение регулирует использование материалов сайта dsbot.su и программного обеспечения DC Bots.</p>
-					<h3 style="font-size: 16px; color: #1a1e24; margin: 20px 0 10px;">1. Авторские права</h3>
-					<p>Все материалы сайта являются интеллектуальной собственностью DC Bots.</p>
-					<h3 style="font-size: 16px; color: #1a1e24; margin: 20px 0 10px;">2. Использование материалов</h3>
-					<p>Запрещается копирование, распространение, модификация материалов без письменного разрешения.</p>
-					<h3 style="font-size: 16px; color: #1a1e24; margin: 20px 0 10px;">3. Программное обеспечение</h3>
-					<p>Программы распространяются на условиях платной лицензии. Запрещается декомпиляция и передача ключей третьим лицам.</p>
-					<div style="margin-top: 24px;">
-						<button onclick="closeLicenseModal()" style="width: 100%; padding: 14px; background: #3d4e5e; color: white; border: none; border-radius: 40px; font-size: 15px; font-weight: 500; cursor: pointer; box-shadow: 0 4px 14px rgba(61,78,94,0.15);">Закрыть</button>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<script>
-			function openLicenseModal() {
-			document.getElementById('licenseModal').style.display = 'flex';
-			document.body.style.overflow = 'hidden';
-			}
-			function closeLicenseModal() {
-			document.getElementById('licenseModal').style.display = 'none';
-			document.body.style.overflow = 'auto';
-			}
-			window.addEventListener('click', (e) => {
-			if (e.target.id === 'licenseModal') closeLicenseModal();
-			});
-			document.addEventListener('keydown', (e) => {
-			if (e.key === 'Escape') closeLicenseModal();
-			});
-		</script>
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница не найдена | Digital Crafts</title>
+    <meta name="description" content="Digital Crafts — цифровые товары: ключи активации для Steam, PSN, Xbox, Epic Games.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="Digital Crafts">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #fafbfc; --card: #fff; --border: #e9ebed;
+            --text: #1a1e24; --text-secondary: #5a6473; --text-muted: #8a94a3;
+            --accent: #4a5a6a; --accent-hover: #2c3a4a; --cta: #3d4e5e;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+        .error-container {
+            max-width: 600px;
+            width: 100%;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 56px 40px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+        .error-code {
+            font-size: 120px;
+            font-weight: 300;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 16px;
+            letter-spacing: -4px;
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+        p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 36px;
+            background: var(--cta);
+            color: white;
+            border: none;
+            border-radius: 40px;
+            font-size: 15px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(61,78,94,0.15);
+        }
+        .btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(61,78,94,0.2);
+        }
+        .links {
+            margin-top: 32px;
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        .links a:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+        .footer {
+            margin-top: 40px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+        @media (max-width: 768px) {
+            .error-container { padding: 40px 24px; }
+            .error-code { font-size: 90px; }
+            h1 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-code">404</div>
+        <h1>Страница не найдена</h1>
+        <p>Извините, запрошенная страница не существует или была перемещена.</p>
+        <a href="index.html" class="btn">Вернуться в витрину</a>
+        <div class="links">
+            <a href="index.html">Витрина</a>
+            <a href="news.html">Новости</a>
+            <a href="support.html">Поддержка</a>
+            <a href="contacts.html">Реквизиты</a>
+            <a href="offer.html">Оферта</a>
+        </div>
+        <div class="footer">
+            © 2026 Digital Crafts. Все права защищены.
+        </div>
+    </div>
+</body>
 </html>
