@@ -1,12 +1,11 @@
 User-agent: *
 Allow: /
 
+Disallow: /payment.html
+Disallow: /partner-dashboard.html
+Disallow: /resume.html
 Disallow: /404.html
 Disallow: /debug_error.log
-Disallow: /test_*
-Disallow: /temp/
-Disallow: /resume.html
-Disallow: /partner-dashboard.html
 
 Sitemap: https://www.dsbot.su/sitemap.xml
 
