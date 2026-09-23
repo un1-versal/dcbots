@@ -3,152 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Новости | DC Bots</title>
-    <meta name="description" content="Новости DC Bots — анонсы, обновления, моды.">
+    <title>Новости — Digital Crafts</title>
+    <meta name="description" content="Новости Digital Crafts — поступления, скидки, обновления.">
     <meta name="robots" content="index, follow">
-    
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <meta name="apple-mobile-web-app-title" content="DC Bots">
-    <link rel="manifest" href="/site.webmanifest">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --bg: #0c0e12; --card: #14171c; --border: #252a33; --border-hover: #3a4150;
-            --text: #e8eaed; --text-secondary: #9aa1af; --text-muted: #606774;
-            --accent: #7a8ea3; --accent-hover: #9aaec3; --cta: #4a5a6a;
-            --shadow: 0 4px 16px rgba(0,0,0,0.3);
-        }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; min-height: 100vh; }
-        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
-        
-        .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 14px 0; background: rgba(12,14,18,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
-        .header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
-        .logo { font-size: 24px; font-weight: 500; color: var(--text); text-decoration: none; }
-        .logo span { color: var(--accent); }
-        .nav { display: flex; gap: 36px; flex-wrap: wrap; }
-        .nav a { color: var(--text-secondary); text-decoration: none; font-weight: 450; font-size: 15px; padding: 6px 0; }
-        .nav a:hover { color: var(--text); }
-        .nav a.active { color: var(--text); font-weight: 500; }
-        
-        .page { padding: 130px 0 60px; }
-        h1 { font-size: 2.5rem; font-weight: 500; margin-bottom: 20px; text-align: center; }
-        
-        .news-grid { display: flex; flex-direction: column; gap: 24px; margin-top: 20px; }
-        .news-card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); }
-        .news-header { padding: 20px 24px 10px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; border-bottom: 1px solid var(--border); }
-        .news-date { color: var(--accent); font-size: 14px; font-weight: 450; }
-        .news-category { background: var(--accent); color: white; padding: 4px 14px; border-radius: 40px; font-size: 12px; font-weight: 500; }
-        .news-title { font-size: 22px; color: var(--text); padding: 16px 24px 8px; font-weight: 500; }
-        .news-content { padding: 0 24px 20px; color: var(--text-secondary); font-size: 15px; line-height: 1.6; }
-        .news-links { padding: 0 24px 20px; display: flex; gap: 24px; flex-wrap: wrap; }
-        .news-links a { color: var(--accent); text-decoration: none; font-size: 14px; transition: color 0.2s; }
-        .news-links a:hover { color: var(--accent-hover); text-decoration: underline; }
-        
-        /*профессиональное пустое состояние*/
-        .news-empty {
-            text-align: center;
-            padding: 72px 32px;
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-        }
-        .news-empty-icon {
-            width: 56px;
-            height: 56px;
-            margin: 0 auto 20px;
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-        }
-        .news-empty-icon svg { width: 26px; height: 26px; }
-        .news-empty h3 {
-            font-size: 18px;
-            font-weight: 500;
-            color: var(--text);
-            margin-bottom: 8px;
-        }
-        .news-empty p {
-            font-size: 14px;
-            color: var(--text-muted);
-            max-width: 320px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-        
-        .idea-button { text-align: right; margin-bottom: 16px; }
-        .btn-idea { background: transparent; border: 1px solid var(--border); color: var(--text); padding: 10px 20px; border-radius: 40px; font-size: 14px; cursor: pointer; transition: all 0.2s; font-family: inherit; }
-        .btn-idea:hover { border-color: var(--border-hover); background: var(--card); }
-        
-        .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(6px); align-items: center; justify-content: center; }
-        .modal-content { background: var(--card); width: 90%; max-width: 500px; border-radius: 20px; border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
-        .modal-header { padding: 22px 26px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
-        .modal-header h2 { font-size: 22px; margin: 0; font-weight: 500; }
-        .close-modal { color: var(--text-muted); font-size: 28px; cursor: pointer; line-height: 1; }
-        .close-modal:hover { color: var(--text); }
-        .modal-body { padding: 24px; }
-        .modal-body input, .modal-body textarea { width: 100%; padding: 13px 16px; margin-bottom: 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 12px; font-family: inherit; font-size: 15px; color: var(--text); }
-        .modal-body input:focus, .modal-body textarea:focus { outline: none; border-color: var(--accent); }
-        .modal-body input::placeholder, .modal-body textarea::placeholder { color: var(--text-muted); }
-        .modal-body textarea { resize: vertical; min-height: 120px; }
-        .modal-body button { width: 100%; background: var(--cta); color: white; border: none; padding: 14px; border-radius: 40px; font-size: 15px; font-weight: 500; cursor: pointer; box-shadow: var(--shadow); transition: all 0.2s; }
-        .modal-body button:hover { background: var(--accent-hover); }
-        
-        .footer { border-top: 1px solid var(--border); padding: 40px 0; text-align: center; color: var(--text-muted); font-size: 14px; }
-        .footer a { color: var(--accent); text-decoration: none; }
-        .footer a:hover { color: var(--accent-hover); text-decoration: underline; }
-        
-        .loader-wrapper { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg); display: flex; justify-content: center; align-items: center; z-index: 9998; transition: opacity 0.4s; }
-        .loader { text-align: center; }
-        .loader-logo { font-size: 48px; font-weight: 300; color: var(--accent); }
-        .loader-text { margin-top: 16px; font-size: 16px; color: var(--accent); }
-        .loader-dots { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
-        .loader-dot { width: 10px; height: 10px; background: var(--accent); border-radius: 50%; animation: dotPulse 1.2s infinite; }
-        .loader-dot:nth-child(2) { animation-delay: 0.2s; }
-        .loader-dot:nth-child(3) { animation-delay: 0.4s; }
-        @keyframes dotPulse { 0%,100%{opacity:0.4;transform:scale(1);} 50%{opacity:1;transform:scale(1.4);} }
-        .loader-wrapper.hide { opacity: 0; visibility: hidden; }
-        
-        @media (max-width: 768px) {
-            .header-inner { flex-direction: column; text-align: center; }
-            .nav { justify-content: center; gap: 22px; }
-            h1 { font-size: 2rem; }
-            .idea-button { text-align: center; }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="loader-wrapper" id="loader">
-        <div class="loader">
-            <div class="loader-logo">DC</div>
-            <div class="loader-text">DC Bots</div>
-            <div class="loader-dots">
-                <div class="loader-dot"></div>
-                <div class="loader-dot"></div>
-                <div class="loader-dot"></div>
-            </div>
-        </div>
-    </div>
-    <script>window.addEventListener('load',function(){const l=document.getElementById('loader');l.classList.add('hide');setTimeout(()=>l.remove(),400);});</script>
-
     <header class="header">
         <div class="container header-inner">
-            <a href="index.html" class="logo">DC<span>Bots</span></a>
+            <a href="index.html" class="logo">Digital<span>Crafts</span></a>
             <div class="nav">
-                <a href="index.html">Главная</a>
+                <a href="index.html">Витрина</a>
                 <a href="news.html" class="active">Новости</a>
                 <a href="support.html">Поддержка</a>
-                <a href="partners.html">Партнёрам</a>
+                <a href="contacts.html">Реквизиты</a>
             </div>
         </div>
     </header>
@@ -156,126 +28,47 @@
     <section class="page">
         <div class="container">
             <h1>Новости</h1>
-            <div class="idea-button"><button class="btn-idea" id="openIdeaModalBtn">Предложить идею мода</button></div>
-            <div id="newsContainer" class="news-grid"></div>
+            <div id="newsContainer" class="product-grid"></div>
         </div>
     </section>
 
-    <div id="ideaModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header"><h2>Предложить идею мода</h2><span class="close-modal" onclick="closeModal('ideaModal')">&times;</span></div>
-            <div class="modal-body">
-                <form action="https://formsubmit.co/cheltypo@gmail.com" method="POST">
-                    <input type="hidden" name="_subject" value="Идея мода с сайта DC Bots">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="text" name="name" placeholder="Ваше имя" required>
-                    <input type="email" name="email" placeholder="Ваш email" required>
-                    <textarea name="message" placeholder="Опишите идею мода..." required></textarea>
-                    <button type="submit">Отправить</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div id="licenseModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header"><h2>Лицензионное соглашение</h2><span class="close-modal" onclick="closeModal('licenseModal')">&times;</span></div>
-            <div class="modal-body">
-                <p style="margin-bottom:16px;">© 2026 DC Bots. Все права защищены.</p>
-                <p style="margin-bottom:16px;">Настоящее соглашение регулирует использование материалов сайта и ПО DC Bots.</p>
-                <h3 style="font-size:16px;margin:16px 0 8px;">1. Авторские права</h3>
-                <p style="color:var(--text-secondary);font-size:14px;">Все материалы — собственность DC Bots.</p>
-                <h3 style="font-size:16px;margin:16px 0 8px;">2. Использование</h3>
-                <p style="color:var(--text-secondary);font-size:14px;">Запрещено копирование без разрешения.</p>
-                <h3 style="font-size:16px;margin:16px 0 8px;">3. ПО</h3>
-                <p style="color:var(--text-secondary);font-size:14px;">Платная лицензия, запрет декомпиляции.</p>
-                <button style="width:100%;margin-top:20px;background:var(--cta);color:white;border:none;padding:14px;border-radius:40px;cursor:pointer;" onclick="closeModal('licenseModal')">Закрыть</button>
-            </div>
-        </div>
-    </div>
-
     <footer class="footer">
         <div class="container">
-            <p>© 2026 DC Bots. Все права защищены.</p>
-            <p style="margin-top:10px;">
-                <a href="index.html">Главная</a> |
+            <p>© 2026 Digital Crafts. Все права защищены.</p>
+            <p style="margin-top: 10px;">
+                <a href="index.html">Витрина</a> |
                 <a href="news.html">Новости</a> |
                 <a href="support.html">Поддержка</a> |
-                <a href="partners.html">Партнёрам</a> |
-                <a href="#" onclick="openModal('licenseModal');return false;">Лицензия</a>
+                <a href="contacts.html">Реквизиты</a> |
+                <a href="offer.html">Оферта</a>
             </p>
         </div>
     </footer>
 
     <script>
-        //открытие модального окна
-        function openModal(id){document.getElementById(id).style.display='flex';document.body.style.overflow='hidden';}
-        //закрытие модального окна
-        function closeModal(id){document.getElementById(id).style.display='none';document.body.style.overflow='auto';}
-
         //загрузка новостей из data/news.json
-        async function loadNews(){
-            const c=document.getElementById('newsContainer');
-            try{
-                const r=await fetch('data/news.json');
-                if(!r.ok)throw new Error();
-                const n=await r.json();
-                if(!n||n.length===0){
-                    c.innerHTML=`
-                        <div class="news-empty">
-                            <div class="news-empty-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M4 4h16v16H4z"/>
-                                    <path d="M8 8h8"/>
-                                    <path d="M8 12h8"/>
-                                    <path d="M8 16h5"/>
-                                </svg>
-                            </div>
-                            <h3>Новостей пока нет</h3>
-                            <p>Мы готовим анонсы и обновления. Заглядывайте позже.</p>
-                        </div>`;
+        async function loadNews() {
+            const c = document.getElementById('newsContainer');
+            try {
+                const r = await fetch('data/news.json');
+                const n = await r.json();
+                if (!n || n.length === 0) {
+                    c.innerHTML = '<p style="text-align:center;color:#9aa1af;grid-column:1/-1;">Новостей пока нет. Заглядывайте позже.</p>';
                     return;
                 }
-                c.innerHTML=n.map(i=>`
-                    <div class="news-card">
-                        <div class="news-header">
-                            <span class="news-date">${i.date}</span>
-                            <span class="news-category">${i.category}</span>
-                        </div>
-                        <h2 class="news-title">${i.title}</h2>
-                        <div class="news-content">
-                            <p>${i.description}</p>
-                            ${i.text?`<p>${i.text}</p>`:''}
-                        </div>
-                        ${i.links?`
-                            <div class="news-links">
-                                ${i.links.wiki?`<a href="${i.links.wiki}" target="_blank">Википедия</a>`:''}
-                                ${i.links.direct?`<a href="${i.links.direct}">Купить</a>`:''}
-                            </div>
-                        `:''}
+                c.innerHTML = n.map(i => `
+                    <div class="product-card">
+                        <div class="product-badge">${i.category || 'Новость'}</div>
+                        <h3 class="product-title">${i.title}</h3>
+                        <p class="product-region">${i.date || ''}</p>
+                        <p class="product-desc">${i.description || ''}</p>
                     </div>
                 `).join('');
-            }catch{
-                c.innerHTML=`
-                    <div class="news-empty">
-                        <div class="news-empty-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 4h16v16H4z"/>
-                                <path d="M8 8h8"/>
-                                <path d="M8 12h8"/>
-                                <path d="M8 16h5"/>
-                            </svg>
-                        </div>
-                        <h3>Новостей пока нет</h3>
-                        <p>Мы готовим анонсы и обновления. Заглядывайте позже.</p>
-                    </div>`;
+            } catch {
+                c.innerHTML = '<p style="text-align:center;color:#9aa1af;grid-column:1/-1;">Новостей пока нет. Заглядывайте позже.</p>';
             }
         }
-
         loadNews();
-        document.getElementById('openIdeaModalBtn')?.addEventListener('click',()=>openModal('ideaModal'));
-        window.addEventListener('click',e=>{if(e.target.classList.contains('modal')){e.target.style.display='none';document.body.style.overflow='auto';}});
-        document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.querySelectorAll('.modal').forEach(m=>m.style.display='none');document.body.style.overflow='auto';}});
     </script>
 </body>
 </html>
