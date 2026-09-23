@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оплата — Digital Crafts</title>
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">Digital<span>Crafts</span></a>
+            <div class="nav">
+                <a href="index.html">Витрина</a>
+                <a href="support.html">Поддержка</a>
+                <a href="contacts.html">Реквизиты</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="page">
+        <div class="container">
+            <h1>Оплата заказа</h1>
+            <div id="paymentContent"></div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Digital Crafts. Все права защищены.</p>
+            <p style="margin-top: 10px;">
+                <a href="index.html">Витрина</a> |
+                <a href="support.html">Поддержка</a> |
+                <a href="contacts.html">Реквизиты</a> |
+                <a href="offer.html">Оферта</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/cart.js"></script>
+    <script>
+        //рендер страницы оплаты
+        renderPaymentPage();
+    </script>
+</body>
+</html>
