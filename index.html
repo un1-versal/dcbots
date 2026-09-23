@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DC Bots — автоматизация Avito, игр и макросов</title>
-    <meta name="description" content="DC Bots: автоматизация для Avito, Dungeon Crusher, Universal Macro Bot.">
-    <meta name="keywords" content="автоматизация, бот для авито, бот для игр, макросы">
+    <title>DC Bots</title>
+    <meta name="description" content="DC Bots — разработка ботов и автоматизация процессов.">
+    <meta name="keywords" content="автоматизация, боты, макросы, разработка">
     <meta name="author" content="DC Bots">
     <meta name="robots" content="index, follow">
-    
+
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <meta name="apple-mobile-web-app-title" content="DC Bots">
     <link rel="manifest" href="/site.webmanifest">
-    
+
     <link rel="canonical" href="https://www.dsbot.su/">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -60,11 +60,34 @@
 
     <section class="hero">
         <div class="container">
-            <h1>Автоматизация, которая работает</h1>
-            <p>Боты для Avito, игр и повторяющихся задач. Экономьте часы каждый день.</p>
+            <h1>Разработка ботов и автоматизация</h1>
+            <p>Создаём решения для повторяющихся задач. Быстро, надёжно, под ваши требования.</p>
             <div class="hero-buttons">
-                <a href="#bots" class="btn btn-primary">Выбрать бота</a>
-                <button class="btn btn-outline" id="openIdeaModalBtn">Предложить идею</button>
+                <button class="btn btn-primary" id="openIdeaModalBtn">Обсудить проект</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Что мы делаем</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h4>Автоматизация процессов</h4>
+                    <p>Убираем рутину: повторяющиеся действия выполняются без вашего участия.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Индивидуальная разработка</h4>
+                    <p>Каждое решение собирается под конкретную задачу, без лишних функций.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Регулярные обновления</h4>
+                    <p>Поддерживаем проекты после запуска, добавляем новые возможности.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Поддержка</h4>
+                    <p>Помогаем с настройкой и отвечаем на вопросы после запуска.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -72,140 +95,18 @@
     <div id="ideaModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Предложить идею</h2>
+                <h2>Обсудить проект</h2>
                 <span class="close-modal" onclick="closeModal('ideaModal')">&times;</span>
             </div>
             <div class="modal-body">
                 <form action="https://formsubmit.co/cheltypo@gmail.com" method="POST">
-                    <input type="hidden" name="_subject" value="Новая идея с сайта DC Bots">
+                    <input type="hidden" name="_subject" value="Новая заявка с сайта DC Bots">
                     <input type="hidden" name="_captcha" value="false">
-                    <input type="text" name="name" placeholder="Ваше имя" required>
-                    <input type="email" name="email" placeholder="Ваш email" required>
-                    <textarea name="message" placeholder="Опишите вашу идею..." required></textarea>
-                    <button type="submit">Отправить</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div id="buyModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="buyModalTitle">Оформление заказа</h2>
-                <span class="close-modal" onclick="closeModal('buyModal')">&times;</span>
-            </div>
-            <div class="modal-body">
-                <form action="https://formsubmit.co/cheltypo@gmail.com" method="POST">
-                    <input type="hidden" name="_subject" value="Заказ с сайта DC Bots">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="product" id="buyProduct">
-                    <input type="hidden" name="tariff" id="buyTariff">
                     <input type="text" name="name" placeholder="Ваше имя" required>
                     <input type="text" name="contact" placeholder="Telegram или Email" required>
-                    <select name="payment_method" required>
-                        <option value="">Способ оплаты</option>
-                        <option value="Карта Сбербанк">Карта Сбербанк</option>
-                        <option value="Карта Тинькофф">Карта Тинькофф</option>
-                        <option value="ЮMoney">ЮMoney</option>
-                        <option value="Криптовалюта USDT">Криптовалюта USDT</option>
-                    </select>
-                    <textarea name="comment" placeholder="Комментарий (необязательно)"></textarea>
-                    <button type="submit">Отправить заявку</button>
+                    <textarea name="message" placeholder="Опишите задачу..." required></textarea>
+                    <button type="submit">Отправить</button>
                 </form>
-                <p style="color: var(--text-muted); font-size: 12px; text-align: center; margin-top: 15px;">После отправки с вами свяжутся для уточнения деталей.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="detailAvitoModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Avito Bot</h2>
-                <span class="close-modal" onclick="closeModal('detailAvitoModal')">&times;</span>
-            </div>
-            <div class="modal-body">
-                <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 14px;">Автоматизация для Avito: поднятие объявлений, авто-ответы, мониторинг, статистика.</p>
-                <div class="detail-section">
-                    <h3>Возможности</h3>
-                    <ul>
-                        <li>Авто-поднятие по расписанию</li>
-                        <li>Авто-ответы на сообщения</li>
-                        <li>Мониторинг заказов</li>
-                        <li>Статистика просмотров</li>
-                        <li>Chrome, Edge, Firefox</li>
-                        <li>Уведомления в Telegram</li>
-                    </ul>
-                </div>
-                <div class="price-block">
-                    <div class="price">от 499 руб <small>/ месяц</small></div>
-                    <p style="color: var(--text-muted); font-size: 13px;">3 месяца — 1199 руб • Навсегда — 2999 руб</p>
-                </div>
-                <div style="display: flex; gap: 12px;">
-                    <button class="btn-buy" style="flex: 1;" onclick="closeModal('detailAvitoModal'); openBuyModal('Avito Bot', '1 месяц - 499 руб');">Купить</button>
-                    <button class="btn-outline" style="flex: 1; border-radius: 40px;" onclick="closeModal('detailAvitoModal');">Закрыть</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="detailDungeonModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Dungeon Crusher Bot</h2>
-                <span class="close-modal" onclick="closeModal('detailDungeonModal')">&times;</span>
-            </div>
-            <div class="modal-body">
-                <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 14px;">Авто-осады с ИИ-директором v2.0. Бот учится на ваших действиях.</p>
-                <div class="detail-section">
-                    <h3>Возможности</h3>
-                    <ul>
-                        <li>Полный цикл осады</li>
-                        <li>ИИ-директор v2.0</li>
-                        <li>Распознавание кнопок</li>
-                        <li>Черный список мобов</li>
-                        <li>Автовосстановление</li>
-                        <li>Статистика и графики</li>
-                    </ul>
-                </div>
-                <div class="price-block">
-                    <div class="price">от 499 руб <small>/ месяц</small></div>
-                    <p style="color: var(--text-muted); font-size: 13px;">3 месяца — 1199 руб • Навсегда — 2999 руб</p>
-                </div>
-                <div style="display: flex; gap: 12px;">
-                    <button class="btn-buy" style="flex: 1;" onclick="closeModal('detailDungeonModal'); openBuyModal('Dungeon Crusher Bot', '1 месяц - 499 руб');">Купить</button>
-                    <button class="btn-outline" style="flex: 1; border-radius: 40px;" onclick="closeModal('detailDungeonModal');">Закрыть</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="detailMacroModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Universal Macro Bot</h2>
-                <span class="close-modal" onclick="closeModal('detailMacroModal')">&times;</span>
-            </div>
-            <div class="modal-body">
-                <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 14px;">Конструктор макросов: запись, поиск изображений, условия, циклы.</p>
-                <div class="detail-section">
-                    <h3>Возможности</h3>
-                    <ul>
-                        <li>Запись действий</li>
-                        <li>Поиск изображений</li>
-                        <li>Условия (if/else)</li>
-                        <li>Циклы (for/while)</li>
-                        <li>Запуск по расписанию</li>
-                        <li>Визуальный редактор</li>
-                    </ul>
-                </div>
-                <div class="price-block">
-                    <div class="price">от 499 руб <small>/ месяц</small></div>
-                    <p style="color: var(--text-muted); font-size: 13px;">3 месяца — 1199 руб • Навсегда — 2999 руб</p>
-                </div>
-                <div style="display: flex; gap: 12px;">
-                    <button class="btn-buy" style="flex: 1;" onclick="closeModal('detailMacroModal'); openBuyModal('Universal Macro Bot', '1 месяц - 499 руб');">Купить</button>
-                    <button class="btn-outline" style="flex: 1; border-radius: 40px;" onclick="closeModal('detailMacroModal');">Закрыть</button>
-                </div>
             </div>
         </div>
     </div>
@@ -230,105 +131,6 @@
         </div>
     </div>
 
-    <section id="bots" class="bots">
-        <div class="container">
-            <h2 class="section-title">Наши решения</h2>
-            <div class="grid">
-
-                <div class="bot-card">
-                    <h3>Avito Bot</h3>
-                    <p>Автоматизация для Avito: поднятие объявлений, авто-ответы, мониторинг, статистика.</p>
-                    <ul class="bot-features">
-                        <li>Авто-поднятие по расписанию</li>
-                        <li>Авто-ответы на сообщения</li>
-                        <li>Мониторинг заказов</li>
-                        <li>Chrome, Edge, Firefox</li>
-                    </ul>
-                    <div class="price">от 499 руб <small>/ месяц</small></div>
-                    <div class="bot-actions">
-                        <a href="#" class="btn-buy" onclick="openBuyModal('Avito Bot', '1 месяц - 499 руб'); return false;">Купить</a>
-                        <a href="#" class="bot-link" onclick="openModal('detailAvitoModal'); return false;">Подробнее</a>
-                    </div>
-                </div>
-
-                <div class="bot-card">
-                    <h3>Dungeon Crusher Bot</h3>
-                    <p>Авто-осады с ИИ-директором v2.0, распознавание боссов, черный список мобов.</p>
-                    <ul class="bot-features">
-                        <li>Полный цикл осады</li>
-                        <li>ИИ-директор v2.0</li>
-                        <li>Распознавание кнопок</li>
-                        <li>Автовосстановление</li>
-                    </ul>
-                    <div class="price">от 499 руб <small>/ месяц</small></div>
-                    <div class="bot-actions">
-                        <a href="#" class="btn-buy" onclick="openBuyModal('Dungeon Crusher Bot', '1 месяц - 499 руб'); return false;">Купить</a>
-                        <a href="#" class="bot-link" onclick="openModal('detailDungeonModal'); return false;">Подробнее</a>
-                    </div>
-                </div>
-
-                <div class="bot-card">
-                    <h3>Universal Macro Bot</h3>
-                    <p>Конструктор макросов: запись действий, поиск изображений, условия, циклы.</p>
-                    <ul class="bot-features">
-                        <li>Запись последовательностей</li>
-                        <li>Поиск изображений</li>
-                        <li>Условия и циклы</li>
-                        <li>Запуск по расписанию</li>
-                    </ul>
-                    <div class="price">от 499 руб <small>/ месяц</small></div>
-                    <div class="bot-actions">
-                        <a href="#" class="btn-buy" onclick="openBuyModal('Universal Macro Bot', '1 месяц - 499 руб'); return false;">Купить</a>
-                        <a href="#" class="bot-link" onclick="openModal('detailMacroModal'); return false;">Подробнее</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="features">
-        <div class="container">
-            <h2 class="section-title">Почему выбирают нас</h2>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <h4>Безопасность</h4>
-                    <p>Лицензия привязывается к вашему компьютеру. Защита от взлома.</p>
-                </div>
-                <div class="feature-item">
-                    <h4>Быстрая поддержка</h4>
-                    <p>Отвечаем в течение часа. Помогаем с настройкой.</p>
-                </div>
-                <div class="feature-item">
-                    <h4>Регулярные обновления</h4>
-                    <p>Постоянно улучшаем ботов, добавляем новые функции.</p>
-                </div>
-                <div class="feature-item">
-                    <h4>Простота использования</h4>
-                    <p>Готовый EXE файл, не требует установки Python.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="support-author">
-        <div class="container">
-            <div class="support-card">
-                <h3>Поддержать разработку</h3>
-                <p>Боты и макросы создаются в свободное время. Ваша поддержка помогает проекту.</p>
-                <div class="support-buttons">
-                    <a href="https://www.donationalerts.com/r/alibobao" target="_blank" class="btn-donate">DonationAlerts</a>
-                    <a href="https://boosty.to/alibobao/single-payment/donation/793850/target?share=target_link" target="_blank" class="btn-boosty">Boosty</a>
-                    <a href="#" class="btn-crypto" id="cryptoBtn">Криптовалюта</a>
-                </div>
-                <div id="cryptoAddresses" style="display: none; margin-top: 15px;">
-                    <p><strong>USDT (TRC20):</strong> TXxxx...yyy</p>
-                    <p><strong>BTC:</strong> bc1q...xyz</p>
-                </div>
-                <p class="support-note">Любая сумма важна. Спасибо!</p>
-            </div>
-        </div>
-    </section>
-
     <footer class="footer">
         <div class="container">
             <p>© 2026 DC Bots. Все права защищены.</p>
@@ -348,23 +150,15 @@
             document.getElementById(modalId).style.display = 'flex';
             document.body.style.overflow = 'hidden';
         }
-        
+
         //закрытие модального окна
         function closeModal(modalId) {
             document.getElementById(modalId).style.display = 'none';
             document.body.style.overflow = 'auto';
         }
-        
-        //открытие окна покупки с подстановкой товара и тарифа
-        function openBuyModal(product, tariff) {
-            document.getElementById('buyProduct').value = product;
-            document.getElementById('buyTariff').value = tariff;
-            document.getElementById('buyModalTitle').textContent = product + ' — ' + tariff;
-            openModal('buyModal');
-        }
 
         document.getElementById('openIdeaModalBtn').addEventListener('click', () => openModal('ideaModal'));
-        
+
         //закрытие по клику на фон
         window.addEventListener('click', (e) => {
             if (e.target.classList.contains('modal')) {
@@ -372,20 +166,13 @@
                 document.body.style.overflow = 'auto';
             }
         });
-        
+
         //закрытие по Escape
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 document.querySelectorAll('.modal').forEach(m => { m.style.display = 'none'; });
                 document.body.style.overflow = 'auto';
             }
-        });
-        
-        //показ адресов криптовалюты
-        document.getElementById('cryptoBtn')?.addEventListener('click', (e) => {
-            e.preventDefault();
-            const div = document.getElementById('cryptoAddresses');
-            div.style.display = div.style.display === 'none' ? 'block' : 'none';
         });
     </script>
 </body>
