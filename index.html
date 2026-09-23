@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DC Bots</title>
-    <meta name="description" content="DC Bots — разработка ботов и автоматизация процессов.">
-    <meta name="keywords" content="автоматизация, боты, макросы, разработка">
-    <meta name="author" content="DC Bots">
+    <title>Digital Crafts — игровые ключи</title>
+    <meta name="description" content="Digital Crafts — цифровые товары: ключи активации для Steam, PSN, Xbox, Epic Games. Быстрая выдача на email.">
+    <meta name="keywords" content="игровые ключи, steam, psn, xbox, epic games, digital crafts">
+    <meta name="author" content="Digital Crafts">
     <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.dsbot.su/">
 
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <meta name="apple-mobile-web-app-title" content="DC Bots">
+    <meta name="apple-mobile-web-app-title" content="Digital Crafts">
     <link rel="manifest" href="/site.webmanifest">
-
-    <link rel="canonical" href="https://www.dsbot.su/">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,7 +27,7 @@
     <div class="loader-wrapper" id="loader">
         <div class="loader">
             <div class="loader-logo">DC</div>
-            <div class="loader-text">DC Bots</div>
+            <div class="loader-text">Digital Crafts</div>
             <div class="loader-dots">
                 <div class="loader-dot"></div>
                 <div class="loader-dot"></div>
@@ -36,7 +35,6 @@
             </div>
         </div>
     </div>
-
     <script>
         //скрытие лоадера после загрузки
         window.addEventListener('load', function() {
@@ -48,68 +46,60 @@
 
     <header class="header">
         <div class="container header-inner">
-            <a href="index.html" class="logo">DC<span>Bots</span></a>
+            <a href="index.html" class="logo">Digital<span>Crafts</span></a>
             <div class="nav">
-                <a href="index.html">Главная</a>
+                <a href="index.html" class="active">Витрина</a>
                 <a href="news.html">Новости</a>
                 <a href="support.html">Поддержка</a>
-                <a href="partners.html">Партнёрам</a>
+                <a href="contacts.html">Реквизиты</a>
             </div>
         </div>
     </header>
 
     <section class="hero">
         <div class="container">
-            <h1>Разработка ботов и автоматизация</h1>
-            <p>Создаём решения для повторяющихся задач. Быстро, надёжно, под ваши требования.</p>
-            <div class="hero-buttons">
-                <button class="btn btn-primary" id="openIdeaModalBtn">Обсудить проект</button>
-            </div>
+            <h1>Игровые ключи для Steam, PSN, Xbox и Epic</h1>
+            <p>Цифровые товары с моментальной выдачей на email. Оплата картой или через СБП.</p>
         </div>
     </section>
 
-    <section class="features">
+    <section class="catalog">
         <div class="container">
-            <h2 class="section-title">Что мы делаем</h2>
+            <h2 class="section-title">Витрина</h2>
+            <div class="filters" id="platformFilters">
+                <button class="filter-btn active" data-platform="all">Все</button>
+                <button class="filter-btn" data-platform="Steam">Steam</button>
+                <button class="filter-btn" data-platform="PSN">PSN</button>
+                <button class="filter-btn" data-platform="Xbox">Xbox</button>
+                <button class="filter-btn" data-platform="Epic Games">Epic Games</button>
+            </div>
+            <div class="product-grid" id="productGrid"></div>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <div class="container">
+            <h2 class="section-title">Как это работает</h2>
             <div class="features-grid">
                 <div class="feature-item">
-                    <h4>Автоматизация процессов</h4>
-                    <p>Убираем рутину: повторяющиеся действия выполняются без вашего участия.</p>
+                    <h4>1. Выбираете товар</h4>
+                    <p>Указываете email на странице оплаты, куда придёт ключ.</p>
                 </div>
                 <div class="feature-item">
-                    <h4>Индивидуальная разработка</h4>
-                    <p>Каждое решение собирается под конкретную задачу, без лишних функций.</p>
+                    <h4>2. Оплачиваете</h4>
+                    <p>Картой или через СБП. Платёж обрабатывает PayMaster.</p>
                 </div>
                 <div class="feature-item">
-                    <h4>Регулярные обновления</h4>
-                    <p>Поддерживаем проекты после запуска, добавляем новые возможности.</p>
+                    <h4>3. Получаете ключ</h4>
+                    <p>Ключ активации приходит на email в течение 5–15 минут после оплаты.</p>
                 </div>
                 <div class="feature-item">
-                    <h4>Поддержка</h4>
-                    <p>Помогаем с настройкой и отвечаем на вопросы после запуска.</p>
+                    <h4>4. Активируете</h4>
+                    <p>Вводите ключ в Steam, PSN, Xbox или Epic Games.</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <div id="ideaModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Обсудить проект</h2>
-                <span class="close-modal" onclick="closeModal('ideaModal')">&times;</span>
-            </div>
-            <div class="modal-body">
-                <form action="https://formsubmit.co/cheltypo@gmail.com" method="POST">
-                    <input type="hidden" name="_subject" value="Новая заявка с сайта DC Bots">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="text" name="name" placeholder="Ваше имя" required>
-                    <input type="text" name="contact" placeholder="Telegram или Email" required>
-                    <textarea name="message" placeholder="Опишите задачу..." required></textarea>
-                    <button type="submit">Отправить</button>
-                </form>
-            </div>
-        </div>
-    </div>
 
     <div id="licenseModal" class="modal">
         <div class="modal-content">
@@ -118,14 +108,12 @@
                 <span class="close-modal" onclick="closeModal('licenseModal')">&times;</span>
             </div>
             <div class="modal-body">
-                <p style="margin-bottom: 16px;">© 2026 DC Bots. Все права защищены.</p>
-                <p style="margin-bottom: 16px;">Настоящее лицензионное соглашение регулирует использование материалов сайта dsbot.su и программного обеспечения DC Bots.</p>
+                <p style="margin-bottom: 16px;">© 2026 Digital Crafts. Все права защищены.</p>
+                <p style="margin-bottom: 16px;">Настоящее лицензионное соглашение регулирует использование материалов сайта dsbot.su.</p>
                 <h3 style="font-size: 16px; margin: 16px 0 8px;">1. Авторские права</h3>
-                <p style="color: var(--text-secondary); font-size: 14px;">Все материалы сайта являются интеллектуальной собственностью DC Bots.</p>
+                <p style="color: var(--text-secondary); font-size: 14px;">Все материалы сайта являются интеллектуальной собственностью Digital Crafts.</p>
                 <h3 style="font-size: 16px; margin: 16px 0 8px;">2. Использование материалов</h3>
                 <p style="color: var(--text-secondary); font-size: 14px;">Запрещается копирование, распространение, модификация материалов без письменного разрешения.</p>
-                <h3 style="font-size: 16px; margin: 16px 0 8px;">3. Программное обеспечение</h3>
-                <p style="color: var(--text-secondary); font-size: 14px;">Программы распространяются на условиях платной лицензии. Запрещается декомпиляция и передача ключей третьим лицам.</p>
                 <button class="btn-buy" style="width: 100%; margin-top: 20px;" onclick="closeModal('licenseModal')">Закрыть</button>
             </div>
         </div>
@@ -133,41 +121,34 @@
 
     <footer class="footer">
         <div class="container">
-            <p>© 2026 DC Bots. Все права защищены.</p>
+            <p>© 2026 Digital Crafts. Все права защищены.</p>
             <p style="margin-top: 10px;">
-                <a href="index.html">Главная</a> |
+                <a href="index.html">Витрина</a> |
                 <a href="news.html">Новости</a> |
                 <a href="support.html">Поддержка</a> |
-                <a href="partners.html">Партнёрам</a> |
+                <a href="contacts.html">Реквизиты</a> |
+                <a href="offer.html">Оферта</a> |
                 <a href="#" onclick="openModal('licenseModal'); return false;">Лицензия</a>
             </p>
         </div>
     </footer>
 
+    <script src="js/cart.js"></script>
     <script>
-        //открытие модального окна
         function openModal(modalId) {
             document.getElementById(modalId).style.display = 'flex';
             document.body.style.overflow = 'hidden';
         }
-
-        //закрытие модального окна
         function closeModal(modalId) {
             document.getElementById(modalId).style.display = 'none';
             document.body.style.overflow = 'auto';
         }
-
-        document.getElementById('openIdeaModalBtn').addEventListener('click', () => openModal('ideaModal'));
-
-        //закрытие по клику на фон
         window.addEventListener('click', (e) => {
             if (e.target.classList.contains('modal')) {
                 e.target.style.display = 'none';
                 document.body.style.overflow = 'auto';
             }
         });
-
-        //закрытие по Escape
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 document.querySelectorAll('.modal').forEach(m => { m.style.display = 'none'; });
