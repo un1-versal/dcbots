@@ -13,9 +13,6 @@
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <meta name="apple-mobile-web-app-title" content="Digital Crafts">
-    <link rel="manifest" href="/site.webmanifest">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,26 +21,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="loader-wrapper" id="loader">
-        <div class="loader">
-            <div class="loader-logo">DC</div>
-            <div class="loader-text">Digital Crafts</div>
-            <div class="loader-dots">
-                <div class="loader-dot"></div>
-                <div class="loader-dot"></div>
-                <div class="loader-dot"></div>
-            </div>
-        </div>
-    </div>
-    <script>
-        //скрытие лоадера после загрузки
-        window.addEventListener('load', function() {
-            const loader = document.getElementById('loader');
-            loader.classList.add('hide');
-            setTimeout(() => loader.remove(), 400);
-        });
-    </script>
-
     <header class="header">
         <div class="container header-inner">
             <a href="index.html" class="logo">Digital<span>Crafts</span></a>
@@ -101,24 +78,6 @@
         </div>
     </section>
 
-    <div id="licenseModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Лицензионное соглашение</h2>
-                <span class="close-modal" onclick="closeModal('licenseModal')">&times;</span>
-            </div>
-            <div class="modal-body">
-                <p style="margin-bottom: 16px;">© 2026 Digital Crafts. Все права защищены.</p>
-                <p style="margin-bottom: 16px;">Настоящее лицензионное соглашение регулирует использование материалов сайта dsbot.su.</p>
-                <h3 style="font-size: 16px; margin: 16px 0 8px;">1. Авторские права</h3>
-                <p style="color: var(--text-secondary); font-size: 14px;">Все материалы сайта являются интеллектуальной собственностью Digital Crafts.</p>
-                <h3 style="font-size: 16px; margin: 16px 0 8px;">2. Использование материалов</h3>
-                <p style="color: var(--text-secondary); font-size: 14px;">Запрещается копирование, распространение, модификация материалов без письменного разрешения.</p>
-                <button class="btn-buy" style="width: 100%; margin-top: 20px;" onclick="closeModal('licenseModal')">Закрыть</button>
-            </div>
-        </div>
-    </div>
-
     <footer class="footer">
         <div class="container">
             <p>© 2026 Digital Crafts. Все права защищены.</p>
@@ -127,34 +86,11 @@
                 <a href="news.html">Новости</a> |
                 <a href="support.html">Поддержка</a> |
                 <a href="contacts.html">Реквизиты</a> |
-                <a href="offer.html">Оферта</a> |
-                <a href="#" onclick="openModal('licenseModal'); return false;">Лицензия</a>
+                <a href="offer.html">Оферта</a>
             </p>
         </div>
     </footer>
 
     <script src="js/cart.js"></script>
-    <script>
-        function openModal(modalId) {
-            document.getElementById(modalId).style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-        window.addEventListener('click', (e) => {
-            if (e.target.classList.contains('modal')) {
-                e.target.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                document.querySelectorAll('.modal').forEach(m => { m.style.display = 'none'; });
-                document.body.style.overflow = 'auto';
-            }
-        });
-    </script>
 </body>
 </html>
