@@ -22,7 +22,7 @@
         :root {
             --bg: #0c0e12; --card: #14171c; --border: #252a33; --border-hover: #3a4150;
             --text: #e8eaed; --text-secondary: #9aa1af; --text-muted: #606774;
-            --accent: #5a6a7a; --accent-hover: #6e8092; --cta: #4a5a6a;
+            --accent: #7a8ea3; --accent-hover: #9aaec3; --cta: #4a5a6a;
             --shadow: 0 4px 16px rgba(0,0,0,0.3);
         }
         body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; min-height: 100vh; }
@@ -50,7 +50,42 @@
         .news-links { padding: 0 24px 20px; display: flex; gap: 24px; flex-wrap: wrap; }
         .news-links a { color: var(--accent); text-decoration: none; font-size: 14px; transition: color 0.2s; }
         .news-links a:hover { color: var(--accent-hover); text-decoration: underline; }
-        .news-empty { text-align: center; padding: 60px 20px; background: var(--card); border: 1px solid var(--border); border-radius: 16px; color: var(--text-muted); }
+        
+        /*профессиональное пустое состояние*/
+        .news-empty {
+            text-align: center;
+            padding: 72px 32px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+        .news-empty-icon {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 20px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+        }
+        .news-empty-icon svg { width: 26px; height: 26px; }
+        .news-empty h3 {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+        .news-empty p {
+            font-size: 14px;
+            color: var(--text-muted);
+            max-width: 320px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
         .idea-button { text-align: right; margin-bottom: 16px; }
         .btn-idea { background: transparent; border: 1px solid var(--border); color: var(--text); padding: 10px 20px; border-radius: 40px; font-size: 14px; cursor: pointer; transition: all 0.2s; font-family: inherit; }
         .btn-idea:hover { border-color: var(--border-hover); background: var(--card); }
@@ -122,7 +157,7 @@
         <div class="container">
             <h1>Новости</h1>
             <div class="idea-button"><button class="btn-idea" id="openIdeaModalBtn">Предложить идею мода</button></div>
-            <div id="newsContainer" class="news-grid"><div style="text-align:center;padding:40px;color:var(--text-muted);">Загрузка новостей...</div></div>
+            <div id="newsContainer" class="news-grid"></div>
         </div>
     </section>
 
@@ -161,7 +196,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p>© 2026 DC Bots. Бесплатные моды для игр.</p>
+            <p>© 2026 DC Bots. Все права защищены.</p>
             <p style="margin-top:10px;">
                 <a href="index.html">Главная</a> |
                 <a href="news.html">Новости</a> |
@@ -173,16 +208,34 @@
     </footer>
 
     <script>
+        //открытие модального окна
         function openModal(id){document.getElementById(id).style.display='flex';document.body.style.overflow='hidden';}
+        //закрытие модального окна
         function closeModal(id){document.getElementById(id).style.display='none';document.body.style.overflow='auto';}
-        
+
+        //загрузка новостей из data/news.json
         async function loadNews(){
             const c=document.getElementById('newsContainer');
             try{
                 const r=await fetch('data/news.json');
                 if(!r.ok)throw new Error();
                 const n=await r.json();
-                if(!n||n.length===0){c.innerHTML='<div class="news-empty">Новостей пока нет</div>';return;}
+                if(!n||n.length===0){
+                    c.innerHTML=`
+                        <div class="news-empty">
+                            <div class="news-empty-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16v16H4z"/>
+                                    <path d="M8 8h8"/>
+                                    <path d="M8 12h8"/>
+                                    <path d="M8 16h5"/>
+                                </svg>
+                            </div>
+                            <h3>Новостей пока нет</h3>
+                            <p>Мы готовим анонсы и обновления. Заглядывайте позже.</p>
+                        </div>`;
+                    return;
+                }
                 c.innerHTML=n.map(i=>`
                     <div class="news-card">
                         <div class="news-header">
@@ -202,9 +255,23 @@
                         `:''}
                     </div>
                 `).join('');
-            }catch{ c.innerHTML='<div class="news-empty">Новостей пока нет</div>'; }
+            }catch{
+                c.innerHTML=`
+                    <div class="news-empty">
+                        <div class="news-empty-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16v16H4z"/>
+                                <path d="M8 8h8"/>
+                                <path d="M8 12h8"/>
+                                <path d="M8 16h5"/>
+                            </svg>
+                        </div>
+                        <h3>Новостей пока нет</h3>
+                        <p>Мы готовим анонсы и обновления. Заглядывайте позже.</p>
+                    </div>`;
+            }
         }
-        
+
         loadNews();
         document.getElementById('openIdeaModalBtn')?.addEventListener('click',()=>openModal('ideaModal'));
         window.addEventListener('click',e=>{if(e.target.classList.contains('modal')){e.target.style.display='none';document.body.style.overflow='auto';}});
