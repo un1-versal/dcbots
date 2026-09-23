@@ -1,3 +1,4 @@
+//основные стили сайта DC Bots
 * {
     margin: 0;
     padding: 0;
@@ -13,15 +14,13 @@
     --text: #e8eaed;
     --text-secondary: #9aa1af;
     --text-muted: #606774;
-    --accent: #5a6a7a;
-    --accent-hover: #6e8092;
+    //акцент поднят для читаемости
+    --accent: #7a8ea3;
+    --accent-hover: #9aaec3;
     --cta: #4a5a6a;
     --cta-hover: #5a6e80;
     --shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
     --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.4);
-    --jarvis-glow: rgba(90, 130, 180, 0.25);
-    --jarvis-border: #4a7090;
-    --jarvis-badge: #3a6080;
 }
 
 body {
@@ -126,7 +125,7 @@ h2 {
 
 .btn-primary {
     background: var(--accent);
-    color: white;
+    color: #0c0e12;
 }
 
 .btn-primary:hover {
@@ -146,19 +145,20 @@ h2 {
     background: var(--card);
 }
 
+//кнопка покупки стала заметнее
 .btn-buy {
-    background: var(--cta);
-    color: white;
+    background: #5a8aaa;
+    color: #fff;
     font-weight: 500;
     padding: 12px 28px;
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 14px rgba(90, 138, 170, 0.25);
     border-radius: 40px;
 }
 
 .btn-buy:hover {
-    background: var(--cta-hover);
+    background: #6e9ec0;
     transform: translateY(-2px);
-    box-shadow: var(--shadow-hover);
+    box-shadow: 0 6px 20px rgba(90, 138, 170, 0.4);
 }
 
 .hero {
@@ -181,10 +181,16 @@ h2 {
 }
 
 .hero-buttons .btn-primary {
-    background: var(--cta);
-    box-shadow: var(--shadow);
+    background: #5a8aaa;
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(90, 138, 170, 0.25);
     font-weight: 500;
     padding: 14px 32px;
+}
+
+.hero-buttons .btn-primary:hover {
+    background: #6e9ec0;
+    box-shadow: 0 6px 20px rgba(90, 138, 170, 0.4);
 }
 
 .bots {
@@ -211,7 +217,7 @@ h2 {
     display: flex;
     flex-direction: column;
     box-shadow: var(--shadow);
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
     position: relative;
 }
 
@@ -295,96 +301,6 @@ h2 {
 .bot-actions .bot-link:hover {
     background: var(--card);
     border-color: var(--border-hover);
-}
-
-.grid.has-jarvis .bot-card:not(.jarvis-card) {
-    opacity: 0.5;
-    filter: grayscale(35%);
-    transition: all 0.6s ease;
-}
-
-.grid.has-jarvis .bot-card:not(.jarvis-card):hover {
-    opacity: 0.75;
-    filter: grayscale(15%);
-}
-
-.jarvis-card {
-    border: 1px solid var(--jarvis-border);
-    box-shadow: 0 0 32px var(--jarvis-glow), 0 0 64px rgba(90, 130, 180, 0.08);
-    background: linear-gradient(145deg, #14191f 0%, #1a1f28 100%);
-    animation: jarvisPulse 3s ease-in-out infinite;
-    z-index: 2;
-}
-
-.jarvis-card:hover {
-    border-color: #5a8aaa;
-    box-shadow: 0 0 40px rgba(90, 130, 180, 0.35), 0 0 80px rgba(90, 130, 180, 0.15);
-    transform: translateY(-6px);
-}
-
-.jarvis-card .bot-features li::before {
-    color: #5a8aaa;
-}
-
-.jarvis-card p {
-    color: #bccbd8;
-}
-
-.jarvis-badge {
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    background: var(--jarvis-badge);
-    color: #c8ddf0;
-    padding: 5px 14px;
-    border-radius: 40px;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.4px;
-    border: 1px solid rgba(90, 130, 180, 0.3);
-}
-
-.jarvis-soon {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: #8ab0d0;
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 20px;
-}
-
-.jarvis-dot {
-    width: 8px;
-    height: 8px;
-    background: #5a8aaa;
-    border-radius: 50%;
-    animation: dotPulseJarvis 1.5s infinite;
-}
-
-.btn-jarvis {
-    background: transparent;
-    border: 1px solid var(--jarvis-border);
-    color: #c8ddf0;
-    font-weight: 500;
-    padding: 12px 22px;
-    box-shadow: 0 0 12px rgba(90, 130, 180, 0.10);
-    border-radius: 40px;
-    flex: 1;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    text-decoration: none;
-    transition: all 0.2s;
-    cursor: pointer;
-}
-
-.btn-jarvis:hover {
-    background: rgba(90, 130, 180, 0.12);
-    border-color: #5a8aaa;
-    box-shadow: 0 0 20px rgba(90, 130, 180, 0.20);
-    color: #fff;
 }
 
 .features {
@@ -571,7 +487,7 @@ h2 {
 
 .modal-body button {
     width: 100%;
-    background: var(--cta);
+    background: #5a8aaa;
     color: white;
     border: none;
     padding: 14px;
@@ -579,12 +495,13 @@ h2 {
     font-size: 15px;
     font-weight: 500;
     cursor: pointer;
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 14px rgba(90, 138, 170, 0.25);
     transition: all 0.2s;
 }
 
 .modal-body button:hover {
-    background: var(--cta-hover);
+    background: #6e9ec0;
+    box-shadow: 0 6px 20px rgba(90, 138, 170, 0.4);
 }
 
 .detail-section {
@@ -713,24 +630,6 @@ h2 {
     50% {
         opacity: 1;
         transform: scale(1.4);
-    }
-}
-
-@keyframes jarvisPulse {
-    0%, 100% {
-        box-shadow: 0 0 32px var(--jarvis-glow), 0 0 64px rgba(90, 130, 180, 0.08);
-    }
-    50% {
-        box-shadow: 0 0 40px rgba(90, 130, 180, 0.35), 0 0 80px rgba(90, 130, 180, 0.15);
-    }
-}
-
-@keyframes dotPulseJarvis {
-    0%, 100% {
-        opacity: 0.5;
-    }
-    50% {
-        opacity: 1;
     }
 }
 
