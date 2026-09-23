@@ -260,10 +260,9 @@ h2 {
 .modal-content {
     background: var(--card);
     width: 100%;
-    max-width: 560px;
+    max-width: 720px;
     max-height: 85vh;
     overflow-y: auto;
-    overflow-x: hidden;
     border-radius: 20px;
     border: 1px solid var(--border);
     box-shadow: var(--shadow-hover);
