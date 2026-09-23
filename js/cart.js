@@ -1,6 +1,6 @@
-//корзина и логика витрины Digital Crafts
+//витрина и корзина Digital Crafts
 
-//загрузка товаров из data/products.json
+//загрузка товаров
 async function loadProducts() {
     const grid = document.getElementById('productGrid');
     if (!grid) return;
@@ -15,7 +15,7 @@ async function loadProducts() {
     }
 }
 
-//рендер карточек товаров
+//рендер карточек
 function renderProducts(products) {
     const grid = document.getElementById('productGrid');
     if (!grid) return;
@@ -40,7 +40,7 @@ function renderProducts(products) {
     `).join('');
 }
 
-//переход к оплате выбранного товара
+//переход к оплате
 function buyProduct(id) {
     const product = (window.__products || []).find(p => p.id === id);
     if (!product) return;
@@ -100,7 +100,7 @@ function renderPaymentPage() {
     `;
 }
 
-//заглушка оплаты: тут позже будет ссылка/форма PayMaster
+//заглушка оплаты
 function startPayment() {
     const email = document.getElementById('buyerEmail').value.trim();
     const agree = document.getElementById('agreeOffer').checked;
@@ -114,14 +114,11 @@ function startPayment() {
         return;
     }
 
-    //сохраняем email для последующей передачи в n8n через вебхук PayMaster
     localStorage.setItem('dc_buyer_email', email);
-
-    //ЗАГЛУШКА: здесь будет редирект на платёжную форму PayMaster
     alert('Здесь будет переход на оплату PayMaster. Пока это тестовый режим.');
 }
 
-//фильтры по платформам
+//фильтры
 document.addEventListener('DOMContentLoaded', () => {
     const filters = document.getElementById('platformFilters');
     if (filters) {
