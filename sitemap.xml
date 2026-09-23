@@ -1,38 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    
-    <!-- Главная страница -->
+
+    <!-- Главная -->
     <url>
         <loc>https://www.dsbot.su/</loc>
         <lastmod>2026-04-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
-    
-    <!-- Dungeon Crusher Bot -->
+
+    <!-- Новости -->
     <url>
-        <loc>https://www.dsbot.su/dungeon-crusher.html</loc>
+        <loc>https://www.dsbot.su/news.html</loc>
         <lastmod>2026-04-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
     </url>
-    
-    <!-- Avito Bot -->
-    <url>
-        <loc>https://www.dsbot.su/avito-bot.html</loc>
-        <lastmod>2026-04-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
-    <!-- Universal Macro Bot -->
-    <url>
-        <loc>https://www.dsbot.su/universal-macro.html</loc>
-        <lastmod>2026-04-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
+
     <!-- Поддержка -->
     <url>
         <loc>https://www.dsbot.su/support.html</loc>
@@ -40,7 +24,7 @@
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
-    
+
     <!-- Партнёрам -->
     <url>
         <loc>https://www.dsbot.su/partners.html</loc>
@@ -48,5 +32,5 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
+
 </urlset>
