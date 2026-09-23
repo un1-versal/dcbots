@@ -260,16 +260,17 @@ h2 {
 .modal-content {
     background: var(--card);
     width: 100%;
-    max-width: 520px;
+    max-width: 560px;
     max-height: 85vh;
     overflow-y: auto;
+    overflow-x: hidden;
     border-radius: 20px;
     border: 1px solid var(--border);
     box-shadow: var(--shadow-hover);
 }
 
 .modal-header {
-    padding: 20px 24px;
+    padding: 22px 28px;
     border-bottom: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
@@ -299,20 +300,22 @@ h2 {
 }
 
 .modal-body {
-    padding: 24px;
+    padding: 28px;
 }
 
 .modal-body form {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
+    max-width: 420px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .modal-body input,
-.modal-body textarea,
-.modal-body select {
+.modal-body textarea {
     width: 100%;
-    padding: 13px 16px;
+    padding: 14px 16px;
     background: var(--bg);
     border: 1px solid var(--border);
     border-radius: 12px;
@@ -321,11 +324,11 @@ h2 {
     line-height: 1.4;
     color: var(--text);
     transition: border-color 0.2s;
+    display: block;
 }
 
 .modal-body input:focus,
-.modal-body textarea:focus,
-.modal-body select:focus {
+.modal-body textarea:focus {
     outline: none;
     border-color: var(--accent);
 }
@@ -336,24 +339,13 @@ h2 {
     font-family: inherit;
 }
 
-.modal-body select {
-    appearance: none;
-    -webkit-appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23606774' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 16px center;
-    padding-right: 40px;
-    cursor: pointer;
-}
-
 .modal-body textarea {
     resize: vertical;
     min-height: 110px;
     font-family: inherit;
 }
 
-.modal-body button[type="submit"],
-.modal-body button:not(.close-modal) {
+.modal-body button[type="submit"] {
     width: 100%;
     background: #5a8aaa;
     color: #fff;
@@ -369,8 +361,7 @@ h2 {
     margin-top: 4px;
 }
 
-.modal-body button[type="submit"]:hover,
-.modal-body button:not(.close-modal):hover {
+.modal-body button[type="submit"]:hover {
     background: #6e9ec0;
     box-shadow: 0 6px 20px rgba(90, 138, 170, 0.4);
 }
