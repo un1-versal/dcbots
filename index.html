@@ -38,6 +38,7 @@
     </div>
 
     <script>
+        //скрытие лоадера после загрузки
         window.addEventListener('load', function() {
             const loader = document.getElementById('loader');
             loader.classList.add('hide');
@@ -136,11 +137,11 @@
                     </ul>
                 </div>
                 <div class="price-block">
-                    <div class="price">от 499 ₽ <small>/ месяц</small></div>
-                    <p style="color: var(--text-muted); font-size: 13px;">3 месяца — 1199 ₽ • Навсегда — 2999 ₽</p>
+                    <div class="price">от 499 руб <small>/ месяц</small></div>
+                    <p style="color: var(--text-muted); font-size: 13px;">3 месяца — 1199 руб • Навсегда — 2999 руб</p>
                 </div>
                 <div style="display: flex; gap: 12px;">
-                    <button class="btn-buy" style="flex: 1;" onclick="closeModal('detailAvitoModal'); openBuyModal('Avito Bot', '1 месяц - 499 ₽');">Купить</button>
+                    <button class="btn-buy" style="flex: 1;" onclick="closeModal('detailAvitoModal'); openBuyModal('Avito Bot', '1 месяц - 499 руб');">Купить</button>
                     <button class="btn-outline" style="flex: 1; border-radius: 40px;" onclick="closeModal('detailAvitoModal');">Закрыть</button>
                 </div>
             </div>
@@ -167,11 +168,11 @@
                     </ul>
                 </div>
                 <div class="price-block">
-                    <div class="price">от 499 ₽ <small>/ месяц</small></div>
-                    <p style="color: var(--text-muted); font-size: 13px;">3 месяца — 1199 ₽ • Навсегда — 2999 ₽</p>
+                    <div class="price">от 499 руб <small>/ месяц</small></div>
+                    <p style="color: var(--text-muted); font-size: 13px;">3 месяца — 1199 руб • Навсегда — 2999 руб</p>
                 </div>
                 <div style="display: flex; gap: 12px;">
-                    <button class="btn-buy" style="flex: 1;" onclick="closeModal('detailDungeonModal'); openBuyModal('Dungeon Crusher Bot', '1 месяц - 499 ₽');">Купить</button>
+                    <button class="btn-buy" style="flex: 1;" onclick="closeModal('detailDungeonModal'); openBuyModal('Dungeon Crusher Bot', '1 месяц - 499 руб');">Купить</button>
                     <button class="btn-outline" style="flex: 1; border-radius: 40px;" onclick="closeModal('detailDungeonModal');">Закрыть</button>
                 </div>
             </div>
@@ -198,32 +199,13 @@
                     </ul>
                 </div>
                 <div class="price-block">
-                    <div class="price">от 499 ₽ <small>/ месяц</small></div>
-                    <p style="color: var(--text-muted); font-size: 13px;">3 месяца — 1199 ₽ • Навсегда — 2999 ₽</p>
+                    <div class="price">от 499 руб <small>/ месяц</small></div>
+                    <p style="color: var(--text-muted); font-size: 13px;">3 месяца — 1199 руб • Навсегда — 2999 руб</p>
                 </div>
                 <div style="display: flex; gap: 12px;">
-                    <button class="btn-buy" style="flex: 1;" onclick="closeModal('detailMacroModal'); openBuyModal('Universal Macro Bot', '1 месяц - 499 ₽');">Купить</button>
+                    <button class="btn-buy" style="flex: 1;" onclick="closeModal('detailMacroModal'); openBuyModal('Universal Macro Bot', '1 месяц - 499 руб');">Купить</button>
                     <button class="btn-outline" style="flex: 1; border-radius: 40px;" onclick="closeModal('detailMacroModal');">Закрыть</button>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="jarvisNotifyModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>J.A.R.V.I.S. — скоро</h2>
-                <span class="close-modal" onclick="closeModal('jarvisNotifyModal')">&times;</span>
-            </div>
-            <div class="modal-body">
-                <p style="color: var(--text-secondary); margin-bottom: 20px;">Оставьте контакт, и мы напишем вам сразу после запуска.</p>
-                <form action="https://formsubmit.co/cheltypo@gmail.com" method="POST">
-                    <input type="hidden" name="_subject" value="Уведомить о Джарвисе | DC Bots">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="text" name="name" placeholder="Ваше имя" required>
-                    <input type="text" name="contact" placeholder="Telegram или Email" required>
-                    <button type="submit">Уведомить</button>
-                </form>
             </div>
         </div>
     </div>
@@ -251,171 +233,8 @@
     <section id="bots" class="bots">
         <div class="container">
             <h2 class="section-title">Наши решения</h2>
-            <div class="grid has-jarvis">
-                <div class="bot-card jarvis-card">
-                    <span class="jarvis-badge">Скоро</span>
-                    <h3>J.A.R.V.I.S.</h3>
-                    <p>Голосовой ассистент нового поколения. Управление ПК, автоматизация, офлайн-распознавание речи. Молниеносная работа на C++ и Python.</p>
-                    <ul class="bot-features">
-                        <li>Голосовое управление Windows</li>
-                        <li>Офлайн-распознавание речи</li>
-                        <li>Молниеносный отклик</li>
-                        <li>Открытие сайтов и поиск</li>
-                    </ul>
-                    <div class="jarvis-soon">
-                        <span class="jarvis-dot"></span> Скоро
-                    </div>
-                    <div class="bot-actions">
-                        <a href="#" class="btn-jarvis" onclick="openModal('jarvisNotifyModal'); return false;">Узнать первым</a>
-                    </div>
-                </div>
+            <div class="grid">
 
                 <div class="bot-card">
                     <h3>Avito Bot</h3>
-                    <p>Автоматизация для Avito: поднятие объявлений, авто-ответы, мониторинг, статистика.</p>
-                    <ul class="bot-features">
-                        <li>Авто-поднятие по расписанию</li>
-                        <li>Авто-ответы на сообщения</li>
-                        <li>Мониторинг заказов</li>
-                        <li>Chrome, Edge, Firefox</li>
-                    </ul>
-                    <div class="price">от 499 ₽ <small>/ месяц</small></div>
-                    <div class="bot-actions">
-                        <a href="#" class="btn-buy" onclick="openBuyModal('Avito Bot', '1 месяц - 499 ₽'); return false;">Купить</a>
-                        <a href="#" class="bot-link" onclick="openModal('detailAvitoModal'); return false;">Подробнее</a>
-                    </div>
-                </div>
-
-                <div class="bot-card">
-                    <h3>Dungeon Crusher Bot</h3>
-                    <p>Авто-осады с ИИ-директором v2.0, распознавание боссов, черный список мобов.</p>
-                    <ul class="bot-features">
-                        <li>Полный цикл осады</li>
-                        <li>ИИ-директор v2.0</li>
-                        <li>Распознавание кнопок</li>
-                        <li>Автовосстановление</li>
-                    </ul>
-                    <div class="price">от 499 ₽ <small>/ месяц</small></div>
-                    <div class="bot-actions">
-                        <a href="#" class="btn-buy" onclick="openBuyModal('Dungeon Crusher Bot', '1 месяц - 499 ₽'); return false;">Купить</a>
-                        <a href="#" class="bot-link" onclick="openModal('detailDungeonModal'); return false;">Подробнее</a>
-                    </div>
-                </div>
-
-                <div class="bot-card">
-                    <h3>Universal Macro Bot</h3>
-                    <p>Конструктор макросов: запись действий, поиск изображений, условия, циклы.</p>
-                    <ul class="bot-features">
-                        <li>Запись последовательностей</li>
-                        <li>Поиск изображений</li>
-                        <li>Условия и циклы</li>
-                        <li>Запуск по расписанию</li>
-                    </ul>
-                    <div class="price">от 499 ₽ <small>/ месяц</small></div>
-                    <div class="bot-actions">
-                        <a href="#" class="btn-buy" onclick="openBuyModal('Universal Macro Bot', '1 месяц - 499 ₽'); return false;">Купить</a>
-                        <a href="#" class="bot-link" onclick="openModal('detailMacroModal'); return false;">Подробнее</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="features">
-        <div class="container">
-            <h2 class="section-title">Почему выбирают нас</h2>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <h4>Безопасность</h4>
-                    <p>Лицензия привязывается к вашему компьютеру. Защита от взлома.</p>
-                </div>
-                <div class="feature-item">
-                    <h4>Быстрая поддержка</h4>
-                    <p>Отвечаем в течение часа. Помогаем с настройкой.</p>
-                </div>
-                <div class="feature-item">
-                    <h4>Регулярные обновления</h4>
-                    <p>Постоянно улучшаем ботов, добавляем новые функции.</p>
-                </div>
-                <div class="feature-item">
-                    <h4>Простота использования</h4>
-                    <p>Готовый EXE файл, не требует установки Python.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="support-author">
-        <div class="container">
-            <div class="support-card">
-                <h3>Поддержать разработку</h3>
-                <p>Боты и макросы создаются в свободное время. Ваша поддержка помогает проекту.</p>
-                <div class="support-buttons">
-                    <a href="https://www.donationalerts.com/r/alibobao" target="_blank" class="btn-donate">DonationAlerts</a>
-                    <a href="https://boosty.to/alibobao/single-payment/donation/793850/target?share=target_link" target="_blank" class="btn-boosty">Boosty</a>
-                    <a href="#" class="btn-crypto" id="cryptoBtn">Криптовалюта</a>
-                </div>
-                <div id="cryptoAddresses" style="display: none; margin-top: 15px;">
-                    <p><strong>USDT (TRC20):</strong> TXxxx...yyy</p>
-                    <p><strong>BTC:</strong> bc1q...xyz</p>
-                </div>
-                <p class="support-note">Любая сумма важна. Спасибо!</p>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <p>© 2026 DC Bots. Все права защищены.</p>
-            <p style="margin-top: 10px;">
-                <a href="index.html">Главная</a> |
-                <a href="news.html">Новости</a> |
-                <a href="support.html">Поддержка</a> |
-                <a href="partners.html">Партнёрам</a> |
-                <a href="#" onclick="openModal('licenseModal'); return false;">Лицензия</a>
-            </p>
-        </div>
-    </footer>
-
-    <script>
-        function openModal(modalId) {
-            document.getElementById(modalId).style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-        
-        function openBuyModal(product, tariff) {
-            document.getElementById('buyProduct').value = product;
-            document.getElementById('buyTariff').value = tariff;
-            document.getElementById('buyModalTitle').textContent = product + ' — ' + tariff;
-            openModal('buyModal');
-        }
-
-        document.getElementById('openIdeaModalBtn').addEventListener('click', () => openModal('ideaModal'));
-        
-        window.addEventListener('click', (e) => {
-            if (e.target.classList.contains('modal')) {
-                e.target.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-        
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                document.querySelectorAll('.modal').forEach(m => { m.style.display = 'none'; });
-                document.body.style.overflow = 'auto';
-            }
-        });
-        
-        document.getElementById('cryptoBtn')?.addEventListener('click', (e) => {
-            e.preventDefault();
-            const div = document.getElementById('cryptoAddresses');
-            div.style.display = div.style.display === 'none' ? 'block' : 'none';
-        });
-    </script>
-</body>
-</html>
+                    <p>Автоматизация для Avito: поднятие объявлений
