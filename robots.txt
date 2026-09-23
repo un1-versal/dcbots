@@ -1,20 +1,18 @@
 User-agent: *
 Allow: /
 
-
 Disallow: /404.html
 Disallow: /debug_error.log
 Disallow: /test_*
 Disallow: /temp/
-
+Disallow: /resume.html
+Disallow: /partner-dashboard.html
 
 Sitemap: https://www.dsbot.su/sitemap.xml
-
 
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 1
-
 
 User-agent: Yandex
 Allow: /
