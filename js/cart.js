@@ -32,8 +32,7 @@ function renderProducts(products) {
             <p class="product-region">Регион: ${p.region}</p>
             <p class="product-desc">${p.description}</p>
             <div class="product-price-row">
-                <span class="product-price">${p.price} ₽</span>
-                ${p.oldPrice ? `<span class="product-old-price">${p.oldPrice} ₽</span>` : ''}
+                <span class="product-price">${p.price.toLocaleString('ru-RU')} ₽</span>
             </div>
             <button class="btn-buy" onclick="buyProduct('${p.id}')">Купить</button>
         </div>
@@ -76,12 +75,12 @@ function renderPaymentPage() {
                             <strong>${p.title}</strong>
                             <div class="payment-item-meta">${p.platform} · ${p.region}</div>
                         </div>
-                        <div class="payment-item-price">${p.price} ₽</div>
+                        <div class="payment-item-price">${p.price.toLocaleString('ru-RU')} ₽</div>
                     </div>
                 `).join('')}
                 <div class="payment-total">
                     <span>Итого:</span>
-                    <strong>${total} ₽</strong>
+                    <strong>${total.toLocaleString('ru-RU')} ₽</strong>
                 </div>
             </div>
             <div class="payment-form">
